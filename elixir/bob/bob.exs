@@ -1,4 +1,7 @@
 defmodule Message do
+  @moduledoc """
+    Defines functions that determinate sentence type, like a question, shouting and silence.
+  """
   def is_question(input), do: String.ends_with?(input, "?")
   def is_yell(input), do: String.upcase(input) == input && Regex.match?(~r/\p{L}/, input)
   def is_silence(input), do: String.trim(input) == ""
