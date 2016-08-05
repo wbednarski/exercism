@@ -8,11 +8,13 @@ defmodule Message do
 end
 
 defmodule Bob do
+  import Message
+
   def hey(input) do
     cond do
-      Message.is_question(input) -> "Sure."
-      Message.is_yell(input) -> "Whoa, chill out!"
-      Message.is_silence(input) -> "Fine. Be that way!"
+      is_question(input) -> "Sure."
+      is_yell(input) -> "Whoa, chill out!"
+      is_silence(input) -> "Fine. Be that way!"
       true -> "Whatever."
     end
   end
