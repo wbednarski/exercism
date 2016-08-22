@@ -27,11 +27,11 @@ class Robot
   end
 
   def turn_right
-    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing) + 1) % 4]
+    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing) + 1) % DIRECTIONS.size]
   end
 
   def turn_left
-    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing) - 1) % 4]
+    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing) - 1) % DIRECTIONS.size]
   end
 end
 
