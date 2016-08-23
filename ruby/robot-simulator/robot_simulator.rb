@@ -27,11 +27,17 @@ class Robot
   end
 
   def turn_right
-    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing) + 1) % DIRECTIONS.size]
+    turn :succ
   end
 
   def turn_left
-    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing) - 1) % DIRECTIONS.size]
+    turn :pred
+  end
+
+  private
+
+  def turn(m)
+    @bearing = DIRECTIONS[(DIRECTIONS.index(@bearing).send(m)) % DIRECTIONS.size]
   end
 end
 
